@@ -7,10 +7,19 @@ const variants = {
   enter: (direction) => {
     return {
       x: direction > 0 ? 1000 : -1000,
+      scale: 0.2,
+      transition: {
+        duration: 0.6
+      },
+
+      // rotateX: direction > 0 ? 90 : -90,
       opacity: 0
     };
   },
   center: {
+    z: 0,
+    scale: 1,
+    rotateX: 0,
     zIndex: 1,
     x: 0,
     opacity: 1
@@ -18,7 +27,12 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
+      scale: 0.2,
       x: direction < 0 ? 1000 : -1000,
+      // rotateX: direction < 0 ? 90 : -90,
+      transition: {
+        duration: 0.6
+      },
       opacity: 0
     };
   }
@@ -37,7 +51,7 @@ export const ExampleCarousal = () => {
       <div className="row   justify-content-center overflow-hidden">
         <div
           style={{
-            width: 700
+            width: "700px"
           }}
           className="carousal-controls  col-12 d-flex my-4 justify-content-between"
         >
@@ -47,7 +61,7 @@ export const ExampleCarousal = () => {
               scale: 0.9,
               cursor: "pointer"
             }}
-            class="material-icons"
+            className="material-icons"
           >
             arrow_back_ios
           </motion.span>
@@ -58,7 +72,7 @@ export const ExampleCarousal = () => {
               scale: 0.9,
               cursor: "pointer"
             }}
-            class="material-icons"
+            className="material-icons"
           >
             arrow_forward_ios
           </motion.span>
