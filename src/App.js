@@ -42,9 +42,11 @@ export default function App() {
           layout
           className="row overflow-hidden justify-content-center my-5 position-relative"
         >
-          <motion.h4 className="col-12 text-center mb-5">
-            Shared layout example
-          </motion.h4>
+          {isSwitchOn && (
+            <motion.h4 className="col-12 text-center mb-5">
+              Shared layout example
+            </motion.h4>
+          )}
           <AnimatePresence>
             {isSwitchOn && <SharedLayoutExampleList />}
           </AnimatePresence>
