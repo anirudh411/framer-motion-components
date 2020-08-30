@@ -35,29 +35,33 @@ export const ExampleCarousal = () => {
   return (
     <>
       <div className="row   justify-content-center overflow-hidden">
-        <div className="carousal-controls  col-12 d-flex my-4 justify-content-between">
-          <motion.button
-            whileTap={{
-              scale: 0.9
+        <div
+          style={{
+            width: 700
+          }}
+          className="carousal-controls  col-12 d-flex my-4 justify-content-between"
+        >
+          <motion.span
+            onTap={() => paginate(-1)}
+            whileHover={{
+              scale: 0.9,
+              cursor: "pointer"
             }}
-            onClick={() => {
-              paginate(-1);
-            }}
-            className="btn btn-sm  btn-outline-dark text-center"
+            class="material-icons"
           >
-            <span class="material-icons">arrow_back_ios</span>
-          </motion.button>
-          <motion.button
-            whileTap={{
-              scale: 0.9
+            arrow_back_ios
+          </motion.span>
+
+          <motion.span
+            onTap={() => paginate(1)}
+            whileHover={{
+              scale: 0.9,
+              cursor: "pointer"
             }}
-            onClick={() => {
-              paginate(1);
-            }}
-            className="btn btn-sm btn-outline-dark "
+            class="material-icons"
           >
-            <span class="material-icons">arrow_forward_ios</span>
-          </motion.button>
+            arrow_forward_ios
+          </motion.span>
         </div>
         <AnimatePresence exitBeforeEnter={true} custom={direction}>
           <motion.img
