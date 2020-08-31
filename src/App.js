@@ -20,18 +20,24 @@ export default function App() {
             animate={{
               y: 0
             }}
+            transition={{
+              y: {
+                delay: 3
+              }
+            }}
             whileTap={{
               scale: 0.9,
               zIndex: 2,
               textShadow: "1px 1px 2px #5FB81B",
               color: "#5FB81B"
             }}
-            drag="x"
-            dragConstraints={containerRef}
             whileHover={{
               cursor: "pointer",
               color: "#FF6026"
             }}
+            drag="x"
+            dragElastic={1}
+            dragConstraints={containerRef}
             className="col-12 text-center mb-5"
           >
             Layout Animation example

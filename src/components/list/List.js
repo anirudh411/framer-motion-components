@@ -47,7 +47,7 @@ export const SharedLayoutExampleList = ({
   const [selectedItem, setSelectedItem] = React.useState(items[0]);
   return (
     <AnimateSharedLayout>
-      <div className="w-100 d-flex justify-content-sm-center">
+      <div className="w-100 d-flex justify-content-center">
         <select
           className="w-25 form-control ml-5 mb-4"
           placeholder="Choose box"
@@ -58,7 +58,9 @@ export const SharedLayoutExampleList = ({
           defaultValue={selectedItem}
         >
           {items.map((item, index) => (
-            <option value={item}>{index + 1}</option>
+            <option key={index} value={item}>
+              {index + 1}
+            </option>
           ))}
         </select>
       </div>
