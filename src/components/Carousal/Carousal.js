@@ -77,7 +77,11 @@ export const ExampleCarousal = () => {
             arrow_forward_ios
           </motion.span>
         </div>
-        <AnimatePresence exitBeforeEnter={true} custom={direction}>
+        <AnimatePresence
+          exitBeforeEnter={true}
+          initial={false}
+          custom={direction}
+        >
           <motion.img
             layout
             key={page}
